@@ -144,13 +144,6 @@ header {
     line-height: 1.6;
 }
 
-.highlight-box {
-    border: 2px solid #4da6ff;
-    border-radius: 6px;
-    padding: 0.75rem;
-    margin-top: 0.75rem;
-    background-color: rgba(255, 255, 255, 0.5);
-}
 
 @media (max-width: 768px) {
     header {
