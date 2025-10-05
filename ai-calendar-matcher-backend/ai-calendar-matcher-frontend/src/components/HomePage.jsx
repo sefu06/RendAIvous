@@ -23,6 +23,7 @@ export default function HomePage() {
     setFriends([...friends, newFriend]);
     setNewFriendEmail("");
     setShowAddFriend(false);
+    alert("Request sent!");
   };
 
   return (
@@ -31,25 +32,24 @@ export default function HomePage() {
 
       <div className="header">
         <h1>Hangout Hub</h1>
-        <button className="btn-plan">✨ Plan Hangout!</button>
+        <button
+          className="btn-plan"
+          onClick={() => setShowAddFriend(true)}
+        >
+          ✨ Add Friend
+        </button>
       </div>
 
       <div className="dashboard-wrapper">
         <div className="dashboard">
           {/* Left column */}
           <div className="dashboard-left">
-            {/* Friends Card with Add Friend */}
+            {/* Friends Card */}
             <div className="card">
               <div className="card-header">
                 <div className="card-title">
                   <span>👥</span> Friends
                 </div>
-                <button
-                  className="btn-plan"
-                  onClick={() => setShowAddFriend(true)}
-                >
-                  ✨ Add Friend
-                </button>
               </div>
 
               {/* Add Friend Popup */}
@@ -122,7 +122,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hangout History */}
+            {/* Hangout History Card */}
             <div className="card">
               <div className="card-header">
                 <div className="card-title">
@@ -152,7 +152,7 @@ export default function HomePage() {
 
           {/* Right column */}
           <div className="dashboard-right">
-            {/* Calendar */}
+            {/* Calendar Card */}
             <div className="card calendar-card">
               <div className="calendar-header">October</div>
               <div className="calendar-grid">
@@ -168,7 +168,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* AI Assistant */}
+            {/* AI Assistant Card */}
             <div className="card ai-assistant-card">
               <div className="card-header">
                 <div className="card-title">
@@ -192,3 +192,4 @@ export default function HomePage() {
     </div>
   );
 }
+
