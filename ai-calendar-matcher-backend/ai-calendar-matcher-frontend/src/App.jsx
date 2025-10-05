@@ -1,27 +1,21 @@
 import React, { useState } from "react";
-import Login from "./components/Login.jsx";
+
+import LandingPage from "./components/LandingPage";
+import HomePage  from "./components/HomePage";
 
 function App() {
   const [user, setUser] = useState(null);
 
-  const handleLogin = ({ user, token }) => {
-    console.log("Logged in user:", user);
-    console.log("Token:", token);
-    setUser(user);
-  };
+  if (!user) {
+    return <LandingPage onLogin={setUser} />;
+  }
 
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>AI Calendar Matcher</h1>
-      {!user ? (
-        <Login onLogin={handleLogin} />
-      ) : (
+    return (
         <div>
-          <h2>Welcome, {user.displayName}!</h2>
-          <p>Email: {user.email}</p>
-        </div>
-      )}
-    </div>
+        <HomePage />
+        <button onClick={() => setUser(null)}>Logout</button>
+      </div>
+ 
   );
 }
 

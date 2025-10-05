@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 1rem, 2rem;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+  }
+  
+  .hangouthub-container {
+    min-height: 100vh;
+    width: 100%;
+    padding: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+  }
+
+
+.dashboard-wrapper {
+    display: flex;
+    justify-content: center; /* centers the dashboard */
+    width: 100%;
+  }
+  
+  
+  .app-name {
+    font-size: 0.875rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin-bottom: 2rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .btn-plan {
+    background-color: #f4b5b5;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-plan:hover {
+    background-color: #f0a0a0;
+    transform: translateY(-2px);
+  }
+  
+  .dashboard {
+    display: grid;
+    grid-template-columns: 2.5fr 4fr;
+    gap: 1.5rem;
+    width: auto;
+    max-width: 1400px;
+  }
+  
+  .dashboard-left,
+  .dashboard-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Cards */
+  .card {
+    background-color: #fce8e8;
+    border-radius: 16px;
+    padding: 1.5rem;
+  }
+  
+  /* Blue outline for Groups */
+  .blue-outline {
+    border: 3px solid #4da6ff;
+  }
+  
+  /* Friends/Groups */
+  .friend-item, .group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .friend-item:hover, .group-item:hover {
+    background-color: rgba(255,255,255,0.5);
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .avatar:nth-child(2n) {
+    background: linear-gradient(135deg,#f093fb 0%,#f5576c 100%);
+  }
+  
+  .avatar:nth-child(3n) {
+    background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);
+  }
+  
+  /* History */
+  .history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .history-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .history-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* Calendar */
+  .calendar-card {
+    background-color: #fff;
+    border-radius: 16px;
+    min-height: 300px;
+  }
+  
+  .calendar-header {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 0.5rem;
+  }
+  
+  .calendar-day-name {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #999;
+    padding: 0.5rem;
+  }
+  
+  .calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    position: relative;
+  }
+  
+  .calendar-day.has-event {
+    background-color: #f0f8ff;
+  }
+  
+  .event-dot {
+    width: 4px;
+    height: 4px;
+    background-color: #4da6ff;
+    border-radius: 50%;
+    margin-top: 2px;
+  }
+  
+  /* AI Assistant */
+  .ai-assistant-card {
+    background-color: #ffe8f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+  }
+  
+  .chat-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  .chat-input-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .chat-input {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+  }
+
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .popup-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .popup-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-confirm {
+    background: #4ade80;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .btn-cancel {
+    background: #f87171;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .dashboard {
+      grid-template-columns: 1fr;
+    }
+  }
+  
