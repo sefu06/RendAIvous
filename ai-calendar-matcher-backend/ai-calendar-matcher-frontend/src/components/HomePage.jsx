@@ -48,7 +48,7 @@ export default function HomePage() {
             <div className="card">
               <div className="card-header">
                 <div className="card-title">
-                  <span>👥</span> Friends
+                   Friends
                 </div>
               </div>
 
@@ -94,9 +94,8 @@ export default function HomePage() {
             <div className="card blue-outline">
               <div className="card-header">
                 <div className="card-title">
-                  <span>👥</span> Groups
+                 Groups
                 </div>
-                <input type="text" className="search-input" placeholder="🔍 Search" />
               </div>
               <div className="groups-list">
                 {[
@@ -131,7 +130,7 @@ export default function HomePage() {
               </div>
               <div className="history-list">
                 {[
-                  { icon: "🍺", title: "Social at Rain or Shine", date: "Oct. 6, 2025", location: "UBC", group: "women in stem 💪" },
+                  { icon: "🍦", title: "Social at Rain or Shine", date: "Oct. 6, 2025", location: "UBC", group: "women in stem 💪" },
                   { icon: "🎤", title: "Karaoke Night", date: "Sept. 29, 2025", location: "UBC", group: "HR Queens" },
                 ].map((history, index) => (
                   <div className="history-item" key={index}>
@@ -140,8 +139,8 @@ export default function HomePage() {
                       <h4>{history.title}</h4>
                       <div className="history-meta">
                         <span>📅 {history.date}</span>
-                        <span>📍 {history.location}</span>
-                        <span>👥 {history.group}</span>
+                        <span> 📍 {history.location}</span>
+                        <span> 👥 {history.group}</span>
                       </div>
                     </div>
                   </div>
@@ -192,4 +191,5 @@ export default function HomePage() {
     </div>
   );
 }
+
 
